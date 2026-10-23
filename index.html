@@ -32,6 +32,18 @@
           <button id="decrescente" class="btn blue">↓ Decrescente</button>
           <button id="limpar" class="btn muted">Limpar</button>
         </div>
+        <div class="algorithm-choice">
+  <label for="algorithm">Algoritmo de ordenação:</label>
+  <select id="algorithm">
+    <option value="bubble">Bubble Sort</option>
+    <option value="selection">Selection Sort</option>
+  </select>
+</div>
+        <div class="sort-animation-controls">
+  <button id="pauseSort" class="btn outline" disabled>Pausar</button>
+  <button id="resumeSort" class="btn outline" disabled>Continuar</button>
+  <button id="restartSort" class="btn outline" disabled>Reiniciar animação</button>
+</div><p id="sortStatus" class="hint" aria-live="polite"></p>
         <div class="result-block">
           <div class="section-heading"><h2>Resultado</h2><span id="sortLabel" class="pill">Aguardando números</span></div>
           <p id="saida" class="result-output" aria-live="polite">Seus números aparecerão aqui.</p>
