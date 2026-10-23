@@ -90,4 +90,7 @@ footer { padding: 15px 0 5px; text-align: center; color: #85a7d2; font-size: 12p
   .result-actions { grid-template-columns: 1fr; }
   .section-heading { align-items: flex-start; }
   .chart-wrap, canvas { height: 230px; }
+  .chart-empty[hidden] {
+display: none;
+  }
 }
