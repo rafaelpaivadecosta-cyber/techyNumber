@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#061326">
+  <meta name="description" content="Ordene números, visualize gráficos e acompanhe seu histórico com o techyNumber.">
+  <title>techyNumber | Organizador inteligente</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="container">
+    <header class="header">
+      <div class="logo">&lt;/&gt;</div>
+      <h1>techy<span>Number</span></h1>
+      <p>Organize, analise e visualize seus números.</p>
+    </header>
+
+    <nav class="tabs" aria-label="Seções do site">
+      <button class="tab active" data-tab="organizador">⌘ Organizador</button>
+      <button class="tab" data-tab="historico">◷ Histórico <span id="historyCount" class="count">0</span></button>
+    </nav>
+
+    <section id="organizador" class="view active">
+      <section class="panel">
+        <label for="numeros">Digite seus números</label>
+        <textarea id="numeros" placeholder="Exemplo: 25, 8, 14, 3, 40"></textarea>
+        <p class="hint">Separe os números por vírgulas, espaços ou quebras de linha.</p>
+        <div class="buttons">
+          <button id="crescente" class="btn green">↑ Crescente</button>
+          <button id="decrescente" class="btn blue">↓ Decrescente</button>
+          <button id="limpar" class="btn muted">Limpar</button>
+        </div>
+        <div class="result-block">
+          <div class="section-heading"><h2>Resultado</h2><span id="sortLabel" class="pill">Aguardando números</span></div>
+          <p id="saida" class="result-output" aria-live="polite">Seus números aparecerão aqui.</p>
+          <div class="buttons result-actions">
+            <button id="copiar" class="btn purple">▢ Copiar resultado</button>
+            <button id="salvar" class="btn outline" disabled>＋ Salvar no histórico</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="stats-grid" aria-label="Estatísticas">
+        <article class="stat-card"><span>Quantidade</span><strong id="statCount">—</strong><small>números</small></article>
+        <article class="stat-card"><span>Soma</span><strong id="statSum">—</strong><small>total</small></article>
+        <article class="stat-card"><span>Média</span><strong id="statMean">—</strong><small>por número</small></article>
+        <article class="stat-card"><span>Mediana</span><strong id="statMedian">—</strong><small>valor central</small></article>
+        <article class="stat-card"><span>Menor</span><strong id="statMin">—</strong><small>valor mínimo</small></article>
+        <article class="stat-card"><span>Maior</span><strong id="statMax">—</strong><small>valor máximo</small></article>
+      </section>
+
+      <section class="panel chart-panel">
+        <div class="section-heading">
+          <div><h2>Visualização gráfica</h2><p class="hint">Gráfico atualizado com os números digitados.</p></div>
+          <select id="chartType" aria-label="Tipo de gráfico">
+            <option value="bar">Barras</option>
+            <option value="line">Linhas</option>
+          </select>
+        </div>
+        <div class="chart-wrap"><canvas id="chart" aria-label="Gráfico dos números" role="img"></canvas><p id="chartEmpty" class="chart-empty">Ordene seus números para gerar um gráfico.</p></div>
+      </section>
+
+      <section class="panel">
+        <div class="section-heading"><h2>Visualização dos dados</h2>
+          <select id="displayMode" aria-label="Formato dos resultados">
+            <option value="list">Lista</option><option value="cards">Cartões</option><option value="table">Tabela</option>
+          </select>
+        </div>
+        <div id="dataView" class="data-view"><p class="hint">Os dados aparecerão aqui após a ordenação.</p></div>
+      </section>
+    </section>
+
+    <section id="historico" class="view">
+      <section class="panel">
+        <div class="section-heading"><div><h2>Histórico de pesquisas</h2><p class="hint">Os registros ficam salvos neste navegador.</p></div><button id="exportar" class="btn outline">Exportar CSV</button></div>
+        <div id="historyList" class="history-list"><p class="hint">Nenhuma pesquisa salva ainda.</p></div>
+        <button id="limparHistorico" class="btn danger">Apagar todo o histórico</button>
+      </section>
+    </section>
+
+    <footer><span class="footer-mark">&lt;/&gt;</span> techyNumber © 2026 <span class="footer-separator">•</span> Feito para facilitar sua vida</footer>
+  </main>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
