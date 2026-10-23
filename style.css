@@ -97,3 +97,36 @@ display: none;
   .chart-empty[hidden] {
   display: none !important;
   }
+.algorithm-choice {
+display: flex;
+flex-wrap: wrap;
+align-items: center;
+gap: 10px;
+margin-top: 16px;
+}
+
+.algorithm-choice label {
+color: var(--text);
+font-weight: 600;
+}
+
+.algorithm-choice select {
+max-width: 100%;
+padding: 10px;
+border: 1px solid var(--border);
+border-radius: 8px;
+background: var(--panel2);
+color: var(--text);
+font: inherit;
+}
+
+.sort-animation-controls {
+display: flex;
+flex-wrap: wrap;
+gap: 8px;
+margin-top: 10px;
+}
+
+.sort-animation-controls .btn {
+flex: 1;
+}
