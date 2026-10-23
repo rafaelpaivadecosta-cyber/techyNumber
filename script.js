@@ -20,7 +20,7 @@ function readNumbers() {
     input.focus();
     return null;
   }
-  const parts = raw.split(/[\\s,;]+/);
+  const parts = raw.split(/[,\s;]+/);
   const values = parts.map(Number);
   if (parts.some((part, i) => part === "" || !Number.isFinite(values[i]))) {
     notify("Confira os números digitados.");
